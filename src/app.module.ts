@@ -11,6 +11,15 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { JwtModule } from '@nestjs/jwt';
 import { HttpModule } from '@nestjs/axios';
+import { CMSModule } from './cms/module';
+import { AuthenticationModule } from './authentication/module';
+import { ProductModule } from './product/module';
+import { CartItemModule } from './cart-item/module';
+import { OrderModule } from './order/module';
+import { OrderItemModule } from './order-item/module';
+import { OrderAssociationModule } from './order-association/module';
+import { WalletModule } from './wallet/module';
+import { CartItemAssociationModule } from './cart-item-association/module';
 
 @Module({
   imports: [
@@ -30,6 +39,15 @@ import { HttpModule } from '@nestjs/axios';
       },
     }),
     HttpModule,
+    CMSModule,
+    AuthenticationModule,
+    ProductModule,
+    CartItemModule,
+    OrderModule,
+    OrderItemModule,
+    OrderAssociationModule,
+    WalletModule,
+    CartItemAssociationModule,
   ],
   controllers: [],
   providers: [
