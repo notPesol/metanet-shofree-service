@@ -20,6 +20,7 @@ import { OrderItemModule } from './order-item/module';
 import { OrderAssociationModule } from './order-association/module';
 import { WalletModule } from './wallet/module';
 import { CartItemAssociationModule } from './cart-item-association/module';
+import { OrderItemAssociationModule } from './order-item-association/module';
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import { CartItemAssociationModule } from './cart-item-association/module';
     OrderAssociationModule,
     WalletModule,
     CartItemAssociationModule,
+    OrderItemAssociationModule,
   ],
   controllers: [],
   providers: [
