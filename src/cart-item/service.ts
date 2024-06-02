@@ -51,7 +51,15 @@ export class CartItemService extends BaseService<CartItemDTO> {
   ): Promise<ResponseDTO<CartItemDTO[]>> {
     const user = req['user'];
     searchDTO.userId = user.id;
-    
+
     return this.findAll(searchDTO);
+  }
+
+  async deleteByIdMe(req: Request, id: number): Promise<number> {
+    const user = req['user'];
+
+    return this.cartItemRepository
+      .getModel()
+      .destroy({ where: { id, userId: user.id } });
   }
 }
